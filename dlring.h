@@ -103,29 +103,29 @@ public:
             return result;
         }
 
-        Iter operator-(size_t shift) const {
+        Iter operator-(difference_type shift) const {
             auto ret = *this;
             ret -= shift;
             return ret;
         }
-        Iter& operator-=(size_t shift) {
+        Iter& operator-=(difference_type shift) {
             while (shift < 0){ ++*this; shift++; }
             while (shift > 0){ --*this; shift--; }
             return *this;
         }
 
-        Iter operator+(size_t shift) const {
+        Iter operator+(difference_type shift) const {
             auto ret = *this;
             ret += shift;
             return ret;
         }
-        Iter& operator+=(size_t shift) {
+        Iter& operator+=(difference_type shift) {
             while (shift < 0){ --*this; shift++; }
             while (shift > 0){ ++*this; shift--; }
             return *this;
         }
 
-        Iter operator[](size_t shift) const { return (*this) + shift; }
+        Iter operator[](difference_type shift) const { return (*this) + shift; }
 
         NodeType* curr;
         owner_type* owner;

@@ -15,7 +15,7 @@ private:
     };
 
     Node* insertNode(Node* curr, const T& data) {
-        Node* new_node = new Node(data, curr, curr->next);
+        Node* new_node = new Node{data, curr, curr->next};
         curr->next->prev = new_node;
         curr->next = new_node;
         ++number_of_nodes;
